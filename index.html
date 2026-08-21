@@ -63,7 +63,13 @@
   .frag-clean{width:250px;padding:1.1rem 1.25rem;transform:rotate(3deg);margin-left:0;z-index:3}
 
   /* Godkjenning quick approve */
-  .frag-approve{width:210px;padding:1rem 1.1rem;transform:rotate(-4deg);margin-left:auto;margin-right:6px;z-index:2}
+  .frag-approve{width:225px;padding:1rem 1.1rem 0.9rem;transform:rotate(-4deg);margin-left:auto;margin-right:6px;z-index:2}
+  .frag-approve .ap-row{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--ink-soft);border-bottom:1px solid var(--line);padding:7px 0}
+  .frag-approve .ap-btns{display:flex;gap:5px}
+  .frag-approve .ap-btn{width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+  .frag-approve .ap-yes{background:#E4ECE4;color:var(--pine)}
+  .frag-approve .ap-no{background:#FBE7E8;color:var(--wine)}
+  .frag-approve .ap-all{margin-top:9px;text-align:center;background:var(--pine);color:#fff;font-size:11.5px;font-weight:600;border-radius:8px;padding:6px 0}
 
   /* Sticky note deadline */
   .frag-sticky{width:150px;padding:1rem 1rem 1.2rem;transform:rotate(-8deg);background:#FBEFA8;border:none;
@@ -82,8 +88,8 @@
   /* ---- CENTER STAGE ---- */
   .center-stage{
     position:relative;z-index:1;
-    min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:2rem 1.5rem;
+    min-height:auto;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:3.5rem 1.5rem 2rem;
     animation:riseIn .8s cubic-bezier(.2,.8,.2,1) both;
   }
   @keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
@@ -244,7 +250,7 @@
   <div class="explain-inner">
     <div class="explain-col without">
       <span class="explain-label">Uten Vellano</span>
-      <p>Timelister sprer seg mellom Excel-ark, SMS-er og huskelapper. Formler går i stykker, tall forsvinner i kopiering, og økonomiansvarlig må jage folk hver eneste måned.</p>
+      <p>Timelister i store Excel-ark, SMS-er i siste liten, huskelapper og formler som går i surr.</p>
 
       <div class="frag frag-excel">
         <div class="xl-head"><span></span><span>Ansatt</span><span>Dato</span><span>Timer</span><span>Lønn</span></div>
@@ -268,7 +274,7 @@
 
     <div class="explain-col with">
       <span class="explain-label">Med Vellano</span>
-      <p>Alle fører timer samme sted. Lederen godkjenner med ett trykk. Du sitter igjen med et ferdig strukturert grunnlag, klart for lønn — uten å røre et regneark.</p>
+      <p>Alle registrerer timer på samme sted. Enkel godkjenningsfunksjon, og du sitter igjen med et ferdig strukturert grunnlag, klart til å eksporteres til regnskapssystemet.</p>
 
       <div class="frag frag-clean">
         <div class="fh">Timeliste · august</div>
@@ -279,8 +285,15 @@
 
       <div class="frag frag-approve">
         <div class="fh">Godkjenning · uke 33</div>
-        <div class="fr"><span>Ola N. · Fotball</span><span style="color:var(--pine)">✓</span></div>
-        <div class="fr"><span>Kari H. · Vaktvikar</span><span style="color:var(--pine)">✓</span></div>
+        <div class="ap-row">
+          <span>Ola N. · Fotball</span>
+          <span class="ap-btns"><span class="ap-btn ap-yes">✓</span><span class="ap-btn ap-no">✗</span></span>
+        </div>
+        <div class="ap-row">
+          <span>Kari H. · Vaktvikar</span>
+          <span class="ap-btns"><span class="ap-btn ap-yes">✓</span><span class="ap-btn ap-no">✗</span></span>
+        </div>
+        <div class="ap-all">Godkjenn alle</div>
       </div>
     </div>
   </div>
