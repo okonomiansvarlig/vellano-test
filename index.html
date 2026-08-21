@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vellano — Timeregistrering for idrettslag</title>
+<meta name="description" content="Vellano gir idrettslaget ditt ett sted for timeregistrering, godkjenning og lønnseksport."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EFF2EA;
+    --ink:#16241C;
+    --ink-soft:#4B5A4F;
+    --ink-faint:#87927E;
+    --pine:#2F5C46;
+    --pine-dark:#1B3527;
+    --wine:#8C2F39;
+    --wine-dark:#6E2029;
+    --line:#D3D8C9;
+    --paper:#F7F8F2;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{animation-duration:0.01ms !important;transition-duration:0.01ms !important;}
+  }
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+    font-feature-settings:'tnum' 1;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.75rem}
+  .eyebrow{
+    font-size:12px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--pine);font-weight:600;
+  }
+  h1,h2,h3{margin:0;font-weight:600}
+  p{margin:0}
+  ::selection{background:var(--pine);color:#fff}
+  a:focus-visible, button:focus-visible{outline:2.5px solid var(--wine);outline-offset:3px;border-radius:3px}
+
+  header.nav{padding:1.6rem 0}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 1.75rem;display:flex;align-items:center;justify-content:space-between}
+  .wordmark{font-family:'Fraunces',serif;font-weight:600;font-size:21px;letter-spacing:-0.01em;text-decoration:none;color:var(--ink)}
+  .nav-login{font-size:14px;text-decoration:none;color:var(--ink-soft);padding-bottom:2px;border-bottom:1px solid var(--line);transition:color .15s,border-color .15s}
+  .nav-login:hover{color:var(--pine-dark);border-color:var(--pine)}
+
+  .hero{padding:3.5rem 0 5rem}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:3.5rem;align-items:center}
+  .hero h1{
+    font-family:'Fraunces',serif;font-size:clamp(2.5rem,4.6vw,3.6rem);
+    line-height:1.06;letter-spacing:-0.02em;margin:0.9rem 0 1.4rem;
+  }
+  .hero h1 em{font-style:italic;color:var(--wine);font-weight:500}
+  .hero p.lead{font-size:18px;color:var(--ink-soft);max-width:44ch;margin-bottom:2.2rem}
+  .cta-row{display:flex;align-items:center;gap:1.7rem;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;background:var(--wine);color:#fff;
+    font-weight:600;font-size:15.5px;padding:13px 26px;border-radius:8px;
+    text-decoration:none;border:none;cursor:pointer;transition:background .15s;
+  }
+  .btn:hover{background:var(--wine-dark)}
+  .link-quiet{font-size:14.5px;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;transition:color .15s,border-color .15s}
+  .link-quiet:hover{color:var(--pine-dark);border-color:var(--pine)}
+
+  /* SIGNATURE: messy vs clean, plain typography, no script font */
+  .signature{position:relative;height:320px}
+  .card-messy{
+    position:absolute;top:0;left:0;width:64%;background:var(--paper);
+    border:1px solid var(--line);border-radius:6px;padding:1.2rem 1.35rem;
+    transform:rotate(-5deg);box-shadow:0 8px 20px -14px rgba(22,36,28,0.25);
+  }
+  .cm-head{font-size:11px;color:var(--ink-faint);letter-spacing:.03em;margin-bottom:10px}
+  .cm-row{display:flex;justify-content:space-between;font-size:14.5px;color:var(--ink-soft);border-bottom:1px solid var(--line);padding:7px 0}
+  .cm-row.bad{color:var(--wine);text-decoration:line-through 1.5px}
+  .card-clean{
+    position:absolute;bottom:0;right:0;width:70%;background:#fff;
+    border:1px solid var(--line);border-radius:8px;padding:1.4rem 1.55rem;
+    box-shadow:0 20px 40px -20px rgba(22,36,28,0.3);
+  }
+  .cc-head{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--pine);font-weight:600;margin-bottom:12px}
+  .cc-dot{width:6px;height:6px;border-radius:50%;background:var(--pine)}
+  .cc-row{display:flex;justify-content:space-between;align-items:center;font-size:14.5px;padding:8px 0;border-bottom:1px solid #EEF0E7}
+  .cc-row:last-of-type{border-bottom:none}
+  .cc-check{width:15px;height:15px;border-radius:4px;background:#E4ECE4;display:inline-flex;align-items:center;justify-content:center;margin-right:9px;font-size:10px;color:var(--pine)}
+  .cc-total{display:flex;justify-content:space-between;margin-top:11px;padding-top:11px;border-top:1px solid var(--line);font-weight:600;font-size:14.5px}
+
+  section{padding:4.2rem 0}
+  .section-head{max-width:600px;margin-bottom:2.8rem}
+  .section-head h2{font-family:'Fraunces',serif;font-size:clamp(1.55rem,2.4vw,1.95rem);letter-spacing:-0.01em;margin-top:0.6rem}
+
+  /* PROBLEM: full-bleed color, no nested cards */
+  .problem{background:var(--pine-dark);color:#EFF2EA}
+  .problem .eyebrow{color:#8FB79C}
+  .problem h2{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:clamp(1.5rem,2.5vw,2rem);color:#fff;margin:0.8rem 0 2.4rem;max-width:26ch}
+  .quote-list{display:grid;grid-template-columns:repeat(3,1fr);gap:2.4rem}
+  .quote-list div{border-top:1px solid rgba(255,255,255,0.22);padding-top:1rem}
+  .quote-list p{font-size:15.5px;color:#DCE6DE}
+  .quote-list span{display:block;font-size:12px;color:#7FA98D;margin-top:10px}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2.6rem}
+  .step-num{font-family:'Fraunces',serif;font-style:italic;font-size:2.3rem;color:var(--pine);line-height:1;margin-bottom:0.8rem}
+  .step h3{font-size:17.5px;margin-bottom:0.5rem}
+  .step p{color:var(--ink-soft);font-size:15px}
+
+  /* BENEFITS: plain columns, no card borders */
+  .benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:2.4rem;max-width:640px}
+  .benefit h3{font-size:16.5px;margin-bottom:7px;display:flex;align-items:center;gap:9px}
+  .benefit p{font-size:14.5px;color:var(--ink-soft)}
+
+  .forhvem{display:grid;grid-template-columns:0.85fr 1.15fr;gap:3.2rem;align-items:start}
+  .forhvem p.desc{color:var(--ink-soft);font-size:16px;margin-top:1rem}
+  .forhvem ul{list-style:none;margin:0;padding:0;display:grid;gap:1.3rem}
+  .forhvem li{display:flex;gap:13px;align-items:flex-start;font-size:15px;color:var(--ink);border-top:1px solid var(--line);padding-top:1rem}
+  .forhvem li b{font-weight:600}
+  .li-ico{flex-shrink:0;margin-top:2px}
+
+  .cta-banner{background:var(--ink);text-align:center}
+  .cta-banner h2{font-family:'Fraunces',serif;font-style:italic;font-weight:500;color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1.7rem}
+
+  footer{border-top:1px solid var(--line);padding:2.4rem 0 3rem}
+  .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+  .footer-tag{font-size:13.5px;color:var(--ink-faint);margin-top:2px}
+  .footer-mail{font-size:14px;color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line)}
+
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:2.6rem}
+    .signature{height:280px;order:-1}
+    .quote-list{grid-template-columns:1fr;gap:1.6rem}
+    .steps{grid-template-columns:1fr;gap:2rem}
+    .benefits{grid-template-columns:1fr;gap:1.8rem}
+    .forhvem{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#" class="wordmark">Vellano</a>
+    <a href="https://timeregistrering-5wyz.vercel.app" class="nav-login">Logg inn</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">For idrettslag i Norge</span>
+        <h1>Timeregistrering som ikke føles som <em>dugnad.</em></h1>
+        <p class="lead">Vellano gir idrettslaget ditt ett sted for timeregistrering, godkjenning og lønnseksport — i stedet for Excel-ark og papirlapper som forsvinner.</p>
+        <div class="cta-row">
+          <a class="btn" href="mailto:hei@vellano.no">Ta kontakt</a>
+          <a class="link-quiet" href="#hvordan">Se hvordan det fungerer</a>
+        </div>
+      </div>
+
+      <div class="signature" aria-hidden="true">
+        <div class="card-messy">
+          <div class="cm-head">timer_august_FINAL_v3.xlsx</div>
+          <div class="cm-row bad"><span>Fotball, uke 32</span><span>?? t</span></div>
+          <div class="cm-row"><span>Vaktvikar 14/8</span><span>4t</span></div>
+          <div class="cm-row bad"><span>hvem sendte denne?</span><span>—</span></div>
+        </div>
+        <div class="card-clean">
+          <div class="cc-head"><span>Timeliste · august</span><span class="cc-dot"></span></div>
+          <div class="cc-row"><span><span class="cc-check">✓</span>Fotball, uke 32</span><span>6,5t</span></div>
+          <div class="cc-row"><span><span class="cc-check">✓</span>Vaktvikar, Klubbhuset</span><span>4,0t</span></div>
+          <div class="cc-row"><span><span class="cc-check">✓</span>Inkludering, AKS</span><span>8,0t</span></div>
+          <div class="cc-total"><span>Godkjent, klar for lønn</span><span>18,5t</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem">
+    <div class="wrap">
+      <span class="eyebrow">Kjenner du dette igjen?</span>
+      <h2>De fleste idrettslag styrer fortsatt timer og lønn på samme måte som for ti år siden.</h2>
+      <div class="quote-list">
+        <div><p>Timelister på papir som havner nederst i en skuff.</p><span>Hver måned</span></div>
+        <div><p>Et Excel-ark med formler ingen tør å røre.</p><span>Hver lønnskjøring</span></div>
+        <div><p>Trenere som glemmer å føre timer før fristen.</p><span>Hver sesong</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hvordan">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Slik fungerer det</span>
+        <h2>Tre steg.</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Registrer</h3>
+          <p>Trenere og ansatte fører timer fortløpende.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Godkjenn</h3>
+          <p>Lederen godkjenner raskt og enkelt.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Eksporter</h3>
+          <p>Godkjente timer eksporteres ferdig strukturert, klare for lønnskjøring.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Hvorfor Vellano</span>
+        <h2>Bygget for hvordan et idrettslag faktisk drives.</h2>
+      </div>
+      <div class="benefits">
+        <div class="benefit">
+          <h3><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M9 2.5v3M2.5 8.5h13M4 8.5l1 6.5h8l1-6.5" stroke="#2F5C46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Tilpasset klubben din</h3>
+          <p>Avdelinger, prosjekter og satser settes opp akkurat slik klubben er organisert i dag.</p>
+        </div>
+        <div class="benefit">
+          <h3><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="6.7" stroke="#2F5C46" stroke-width="1.5"/><path d="M9 5.5v3.8l2.5 1.5" stroke="#2F5C46" stroke-width="1.5" stroke-linecap="round"/></svg>Bygget med et ekte idrettslag</h3>
+          <p>Utviklet sammen med en aktiv klubb som selv brukte timer på Excel-ark hver måned.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap forhvem">
+      <div>
+        <span class="eyebrow">For hvem</span>
+        <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.55rem,2.4vw,1.95rem);letter-spacing:-0.01em;margin-top:0.6rem">Laget for norske idrettslag.</h2>
+        <p class="desc">Ikke en tilpasning av et system bygget for konsern og byråkrati — men et verktøy laget fra bunnen for hvordan et idrettslag faktisk er organisert.</p>
+      </div>
+      <ul>
+        <li><span class="li-ico"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="4.5" r="2.3" stroke="#2F5C46" stroke-width="1.5"/><path d="M3.5 15c0-3 2.5-5.2 5.5-5.2s5.5 2.2 5.5 5.2" stroke="#2F5C46" stroke-width="1.5" stroke-linecap="round"/></svg></span><span><b>Trenere og vaktvikarer</b> — fører egne timer, uansett hvor mange oppdrag de har.</span></li>
+        <li><span class="li-ico"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><rect x="3" y="3.5" width="12" height="11" rx="1.5" stroke="#2F5C46" stroke-width="1.5"/><path d="M5.8 7.2h6.4M5.8 10h6.4M5.8 12.3h3.5" stroke="#2F5C46" stroke-width="1.4" stroke-linecap="round"/></svg></span><span><b>Ledere og avdelingsansvarlige</b> — godkjenner samlet, med oversikt over egne avdelinger.</span></li>
+        <li><span class="li-ico"><svg width="16" height="16" viewBox="0 0 18 18" fill="none"><path d="M9 2.5v3M2.5 8.5h13M4 8.5l1 6.5h8l1-6.5" stroke="#2F5C46" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 5.5c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5" stroke="#2F5C46" stroke-width="1.5"/></svg></span><span><b>Økonomiansvarlig</b> — eksporterer rett til lønnssystemet uten å telle timer manuelt.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="wrap">
+      <h2>Klar for å legge Excel-arket i skuffen?</h2>
+      <a class="btn" href="mailto:hei@vellano.no">Ta kontakt</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <a href="#" class="wordmark" style="font-size:17px">Vellano</a>
+      <div class="footer-tag">Timeregistrering for idrettslag</div>
+    </div>
+    <a class="footer-mail" href="mailto:hei@vellano.no">hei@vellano.no</a>
+  </div>
+</footer>
+
+</body>
+</html>
