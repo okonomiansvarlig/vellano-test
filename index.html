@@ -40,63 +40,66 @@
   @keyframes driftA{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.08)}}
   @keyframes driftB{from{transform:translate(0,0) scale(1)}to{transform:translate(-35px,-25px) scale(1.05)}}
 
+  .frag-cluster{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin-top:0.4rem}
   .frag{background:#fff;border:1px solid var(--line);border-radius:8px;
     box-shadow:0 16px 34px -18px rgba(22,36,28,0.28);opacity:0.94;
-    margin-top:-0.6rem;position:relative}
+    position:relative;width:100%}
 
   /* Excel grid mockup */
-  .frag-excel{width:280px;padding:0;transform:rotate(-4deg);margin-left:0;z-index:3;overflow:hidden}
-  .frag-excel .xl-head{display:grid;grid-template-columns:14px 1fr 0.7fr 0.6fr 0.6fr 0.55fr 0.55fr 0.7fr;background:#EDF0E6;border-bottom:1px solid var(--line)}
-  .frag-excel .xl-head span{font-size:7px;color:var(--ink-faint);text-align:center;padding:3px 0;border-right:1px solid var(--line);overflow:hidden}
-  .frag-excel .xl-row{display:grid;grid-template-columns:14px 1fr 0.7fr 0.6fr 0.6fr 0.55fr 0.55fr 0.7fr}
-  .frag-excel .xl-row span{font-size:7.5px;padding:3px 2px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--ink-soft);text-align:center;white-space:nowrap;overflow:hidden}
-  .frag-excel .xl-row span:first-child{background:#EDF0E6;color:var(--ink-faint);font-size:10px}
+  .frag-excel{padding:0;transform:rotate(-3deg);overflow:hidden;align-self:start}
+  .frag-excel .xl-head{display:grid;grid-template-columns:12px 1fr 0.8fr 0.6fr 0.8fr;background:#EDF0E6;border-bottom:1px solid var(--line)}
+  .frag-excel .xl-head span{font-size:6.5px;color:var(--ink-faint);text-align:center;padding:3px 0;border-right:1px solid var(--line);overflow:hidden}
+  .frag-excel .xl-row{display:grid;grid-template-columns:12px 1fr 0.8fr 0.6fr 0.8fr}
+  .frag-excel .xl-row span{font-size:7px;padding:2.5px 1px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--ink-soft);text-align:center;white-space:nowrap;overflow:hidden}
+  .frag-excel .xl-row span:first-child{background:#EDF0E6;color:var(--ink-faint);font-size:9px}
   .frag-excel .xl-err{color:var(--wine);background:#FCEAEA;font-weight:600}
 
   /* SMS conversation mockup */
-  .frag-sms{width:210px;padding:1rem 1rem 0.9rem;transform:rotate(5deg);margin-left:auto;margin-right:12px;z-index:2}
-  .frag-sms .sms-bubble{max-width:82%;padding:7px 11px;border-radius:14px;font-size:12.5px;line-height:1.4;margin-bottom:6px}
+  .frag-sms{padding:0.8rem 0.8rem 0.7rem;transform:rotate(3deg);align-self:start}
+  .frag-sms .sms-bubble{max-width:88%;padding:6px 9px;border-radius:12px;font-size:11px;line-height:1.35;margin-bottom:5px}
   .frag-sms .sms-in{background:#EEF0E7;color:var(--ink-soft);border-bottom-left-radius:4px}
   .frag-sms .sms-out{background:var(--pine);color:#fff;margin-left:auto;border-bottom-right-radius:4px}
 
   /* Gmail-style email mockup */
-  .frag-email{width:230px;padding:0;transform:rotate(-3deg);margin-left:24px;z-index:2;overflow:hidden}
-  .frag-email .em-head{display:flex;align-items:center;gap:5px;background:#F1F3EE;padding:8px 10px;border-bottom:1px solid var(--line)}
-  .frag-email .em-dot{width:7px;height:7px;border-radius:50%;background:#E86B5C}
-  .frag-email .em-subj{font-size:10.5px;color:var(--ink-faint);margin-left:6px}
-  .frag-email .em-body{padding:0.8rem 1rem}
-  .frag-email .em-line{font-size:10.5px;color:var(--ink-faint);margin-bottom:3px}
-  .frag-email .em-text{font-size:11.5px;color:var(--ink-soft);line-height:1.6;margin-top:6px}
+  .frag-email{padding:0;transform:rotate(-2deg);overflow:hidden;align-self:start}
+  .frag-email .em-head{display:flex;align-items:center;gap:4px;background:#F1F3EE;padding:6px 8px;border-bottom:1px solid var(--line)}
+  .frag-email .em-dot{width:6px;height:6px;border-radius:50%;background:#E86B5C}
+  .frag-email .em-subj{font-size:9.5px;color:var(--ink-faint);margin-left:5px}
+  .frag-email .em-body{padding:0.6rem 0.75rem}
+  .frag-email .em-line{font-size:9.5px;color:var(--ink-faint);margin-bottom:2px}
+  .frag-email .em-text{font-size:10px;color:var(--ink-soft);line-height:1.5;margin-top:4px}
 
   /* Authentic app UI mockups — bruker den ekte appens farger (blå/grønn/rød), ikke Vellano sine */
-  .app-fh{font-size:10.5px;font-weight:600;color:#4a4a4a;letter-spacing:.02em;margin-bottom:9px}
+  .app-fh{font-size:9.5px;font-weight:600;color:#4a4a4a;letter-spacing:.02em;margin-bottom:7px}
 
-  .frag-submitted{width:220px;padding:1rem 1.1rem;transform:rotate(3deg);margin-left:0;z-index:3}
-  .app-entry{background:#f7f7f5;border-radius:10px;padding:0.7rem 0.85rem}
-  .app-entry-top{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;font-weight:600;color:#1a1a1a;margin-bottom:4px}
-  .app-entry-sub{font-size:11.5px;color:#7a7a7a}
-  .app-badge{font-size:10px;font-weight:600;border-radius:100px;padding:2px 9px}
+  .frag-submitted{padding:0.85rem 0.9rem;transform:rotate(2deg);align-self:start}
+  .app-entry{background:#f7f7f5;border-radius:9px;padding:0.6rem 0.7rem}
+  .app-entry-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:600;color:#1a1a1a;margin-bottom:3px;gap:6px}
+  .app-entry-sub{font-size:10px;color:#7a7a7a}
+  .app-badge{font-size:9px;font-weight:600;border-radius:100px;padding:2px 8px;white-space:nowrap}
   .app-badge-innsendt{background:#fef7e6;color:#7a5200}
   .app-badge-godkjent{background:#e6f4ec;color:#1a6b3c}
 
-  .frag-approve{width:235px;padding:1rem 1.1rem 0.9rem;transform:rotate(-4deg);margin-left:auto;margin-right:6px;z-index:2}
-  .app-ansatt{font-size:12px;font-weight:700;color:#1a1a1a;margin-bottom:6px}
-  .app-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e8e8e5;padding:7px 0}
-  .app-row-info{display:flex;flex-direction:column;font-size:11.5px;color:#1a1a1a}
-  .app-row-sub{font-size:10px;color:#7a7a7a;margin-top:1px}
-  .app-btns{display:flex;gap:5px}
-  .app-btn{width:20px;height:20px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:700}
+  .frag-approve{padding:0.85rem 0.9rem 0.75rem;transform:rotate(-3deg);align-self:start}
+  .app-ansatt{font-size:11px;font-weight:700;color:#1a1a1a;margin-bottom:4px}
+  .app-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e8e8e5;padding:6px 0;gap:6px}
+  .app-row-info{display:flex;flex-direction:column;font-size:10px;color:#1a1a1a}
+  .app-row-sub{font-size:9px;color:#7a7a7a;margin-top:1px}
+  .app-btns{display:flex;gap:4px}
+  .app-btn{width:17px;height:17px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:700;flex-shrink:0}
   .app-yes{background:#e6f4ec;color:#1a6b3c}
   .app-no{background:#fceaea;color:#b5191a}
 
-  .frag-export{width:220px;padding:1rem 1.1rem;transform:rotate(5deg);margin-left:auto;margin-right:18px;z-index:1}
-  .exp-head{display:grid;grid-template-columns:1fr 0.7fr 0.6fr 0.8fr;font-size:9px;color:#7a7a7a;font-weight:600;border-bottom:1px solid #e8e8e5;padding-bottom:5px;margin-bottom:4px}
-  .exp-row{display:grid;grid-template-columns:1fr 0.7fr 0.6fr 0.8fr;font-size:11px;color:#4a4a4a;padding:3px 0}
-  .exp-total{display:grid;grid-template-columns:1fr 0.7fr 0.6fr 0.8fr;font-size:11px;font-weight:700;color:#1a1a1a;border-top:1px solid #e8e8e5;margin-top:4px;padding-top:5px}
+  .frag-export{padding:0.85rem 0.9rem;transform:rotate(2deg);align-self:start}
+  .exp-head{display:grid;grid-template-columns:1fr 0.7fr 0.6fr 0.8fr;font-size:8px;color:#7a7a7a;font-weight:600;border-bottom:1px solid #e8e8e5;padding-bottom:4px;margin-bottom:3px}
+  .exp-row{display:grid;grid-template-columns:1fr 0.7fr 0.6fr 0.8fr;font-size:9.5px;color:#4a4a4a;padding:2px 0}
+  .exp-total{display:grid;grid-template-columns:1fr 0.7fr 0.6fr 0.8fr;font-size:9.5px;font-weight:700;color:#1a1a1a;border-top:1px solid #e8e8e5;margin-top:3px;padding-top:4px}
+
+  .frag-godkjent2{padding:0.85rem 0.9rem;transform:rotate(-2deg);align-self:start}
 
   /* Sticky note deadline */
-  .frag-sticky{width:150px;padding:1rem 1rem 1.2rem;transform:rotate(-8deg);background:#FBEFA8;border:none;
-    box-shadow:0 14px 28px -16px rgba(22,36,28,0.3);margin-left:16px;z-index:1}
+  .frag-sticky{padding:0.8rem 0.8rem 1rem;transform:rotate(-6deg);background:#FBEFA8;border:none;
+    box-shadow:0 14px 28px -16px rgba(22,36,28,0.3);align-self:start}
 
   .frag .fh{font-size:10px;color:var(--ink-faint);letter-spacing:.03em;margin-bottom:8px}
   .frag .fr{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-soft);border-bottom:1px solid var(--line);padding:5px 0}
@@ -237,6 +240,9 @@
   @media (max-width:640px){
     .explain-inner{grid-template-columns:1fr;gap:1.4rem}
     .explain-divider{display:none}
+    .club-grid{grid-template-columns:1fr 1fr}
+    .club-card{padding:1rem 0.5rem}
+    .club-card img{width:64px;height:64px}
   }
 </style>
 </head>
@@ -276,41 +282,39 @@
       <span class="explain-label">Lønnskjøring preget av</span>
       <p>Timelister i store Excel-ark, SMS-er i siste liten, huskelapper og formler som går i surr.</p>
 
-      <div class="frag frag-excel">
-        <div class="xl-head"><span></span><span>Ansatt</span><span>Dato</span><span>Fra</span><span>Til</span><span>Timer</span><span>Sats</span><span>Lønn</span></div>
-        <div class="xl-row"><span>1</span><span>Ola N.</span><span>12.08</span><span>08:00</span><span>16:00</span><span>8</span><span>220</span><span class="xl-err">#REF!</span></div>
-        <div class="xl-row"><span>2</span><span>Kari H.</span><span>13.08</span><span>—</span><span>—</span><span class="xl-err">#VALUE!</span><span>220</span><span>—</span></div>
-        <div class="xl-row"><span>3</span><span>Per T.</span><span>14.08</span><span>09:00</span><span>13:00</span><span>4</span><span>215</span><span>860</span></div>
-        <div class="xl-row"><span>4</span><span>Ola N.</span><span>15.08</span><span>—</span><span>—</span><span>—</span><span>220</span><span class="xl-err">#REF!</span></div>
-        <div class="xl-row"><span>5</span><span>Kari H.</span><span>16.08</span><span>14:00</span><span>18:00</span><span>4</span><span>220</span><span>880</span></div>
-        <div class="xl-row"><span>6</span><span>Siri M.</span><span>16.08</span><span>10:00</span><span>15:00</span><span>5</span><span>215</span><span>1075</span></div>
-      </div>
-
-      <div class="frag frag-sms">
-        <div class="sms-bubble sms-in">Har du husket å sende inn timelista? 📋</div>
-        <div class="sms-bubble sms-out">Oi, glemte helt! Sender nå 😅</div>
-      </div>
-
-      <div class="frag frag-email">
-        <div class="em-head">
-          <span class="em-dot"></span><span class="em-dot" style="background:#F5C242"></span><span class="em-dot" style="background:#5CB85C"></span>
-          <span class="em-subj">Timer august</span>
+      <div class="frag-cluster">
+        <div class="frag frag-excel">
+          <div class="xl-head"><span></span><span>Ansatt</span><span>Dato</span><span>Timer</span><span>Lønn</span></div>
+          <div class="xl-row"><span>1</span><span>Ola N.</span><span>12.08</span><span>8</span><span class="xl-err">#REF!</span></div>
+          <div class="xl-row"><span>2</span><span>Kari H.</span><span>13.08</span><span class="xl-err">#VALUE!</span><span>—</span></div>
+          <div class="xl-row"><span>3</span><span>Per T.</span><span>14.08</span><span>4</span><span>860</span></div>
+          <div class="xl-row"><span>4</span><span>Siri M.</span><span>16.08</span><span>5</span><span>1075</span></div>
         </div>
-        <div class="em-body">
-          <div class="em-line"><b>Fra:</b> Ola Nilsen</div>
-          <div class="em-line"><b>Emne:</b> timer august</div>
-          <div class="em-text">
-            Hei!<br/>
-            Mandag 12.08 – 12:30-14:00<br/>
-            Onsdag var det vel 3t?<br/>
-            Fre 16/8 09-13
+
+        <div class="frag frag-sms">
+          <div class="sms-bubble sms-in">Har du husket å sende inn timelista? 📋</div>
+          <div class="sms-bubble sms-out">Oi, glemte helt! Sender nå 😅</div>
+        </div>
+
+        <div class="frag frag-email">
+          <div class="em-head">
+            <span class="em-dot"></span><span class="em-dot" style="background:#F5C242"></span><span class="em-dot" style="background:#5CB85C"></span>
+            <span class="em-subj">Timer august</span>
+          </div>
+          <div class="em-body">
+            <div class="em-line"><b>Fra:</b> Ola Nilsen</div>
+            <div class="em-text">
+              Hei!<br/>
+              Mandag 12.08 – 12:30-14:00<br/>
+              Onsdag var det vel 3t?
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="frag frag-sticky">
-        <div style="font-size:11px;color:#5C4A0A;font-weight:600;margin-bottom:6px">🗒️ Husk!</div>
-        <div style="font-size:13px;color:#3D3006;line-height:1.4">Send inn timer innen 5. sep</div>
+        <div class="frag frag-sticky">
+          <div style="font-size:11px;color:#5C4A0A;font-weight:600;margin-bottom:6px">🗒️ Husk!</div>
+          <div style="font-size:13px;color:#3D3006;line-height:1.4">Send inn timer innen 5. sep</div>
+        </div>
       </div>
     </div>
 
@@ -320,33 +324,39 @@
       <span class="explain-label">Enklere hverdag med Vellano</span>
       <p>Alle registrerer timer på samme sted. Enkel godkjenningsfunksjon, og du sitter igjen med et ferdig strukturert grunnlag, klart til å eksporteres til regnskapssystemet.</p>
 
-      <div class="frag frag-submitted">
-        <div class="app-fh">Mine timer</div>
-        <div class="app-entry">
-          <div class="app-entry-top"><span>Vaktvikar</span><span class="app-badge app-badge-innsendt">Innsendt</span></div>
-          <div class="app-entry-sub">Klubbhuset · 4,0t</div>
+      <div class="frag-cluster">
+        <div class="frag frag-submitted">
+          <div class="app-fh">Mine timer</div>
+          <div class="app-entry">
+            <div class="app-entry-top"><span>Vaktvikar</span><span class="app-badge app-badge-innsendt">Innsendt</span></div>
+            <div class="app-entry-sub">Klubbhuset · 4,0t</div>
+          </div>
         </div>
-      </div>
 
-      <div class="frag frag-approve">
-        <div class="app-fh">Godkjenning</div>
-        <div class="app-ansatt">Ola Nilsen</div>
-        <div class="app-row">
-          <div class="app-row-info"><span>12.08 · Vaktvikar</span><span class="app-row-sub">Klubbhuset · 4,0t</span></div>
-          <span class="app-btns"><span class="app-btn app-yes">✓</span><span class="app-btn app-no">✗</span></span>
+        <div class="frag frag-approve">
+          <div class="app-fh">Godkjenning</div>
+          <div class="app-ansatt">Ola Nilsen</div>
+          <div class="app-row">
+            <div class="app-row-info"><span>12.08 · Vaktvikar</span><span class="app-row-sub">Klubbhuset · 4,0t</span></div>
+            <span class="app-btns"><span class="app-btn app-yes">✓</span><span class="app-btn app-no">✗</span></span>
+          </div>
         </div>
-        <div class="app-row">
-          <div class="app-row-info"><span>14.08 · Fotball</span><span class="app-row-sub">Uke 33 · 6,5t</span></div>
-          <span class="app-badge app-badge-godkjent">Godkjent</span>
-        </div>
-      </div>
 
-      <div class="frag frag-export">
-        <div class="app-fh">Eksport</div>
-        <div class="exp-head"><span>Ansattnr</span><span>Antall</span><span>Sats</span><span>Lønn</span></div>
-        <div class="exp-row"><span>14</span><span>4,0</span><span>220</span><span>880</span></div>
-        <div class="exp-row"><span>22</span><span>6,5</span><span>215</span><span>1398</span></div>
-        <div class="exp-total"><span>Totalt</span><span>10,5t</span><span></span><span>2278</span></div>
+        <div class="frag frag-export">
+          <div class="app-fh">Eksport</div>
+          <div class="exp-head"><span>Nr</span><span>Antall</span><span>Sats</span><span>Lønn</span></div>
+          <div class="exp-row"><span>14</span><span>4,0</span><span>220</span><span>880</span></div>
+          <div class="exp-row"><span>22</span><span>6,5</span><span>215</span><span>1398</span></div>
+          <div class="exp-total"><span>Totalt</span><span>10,5t</span><span></span><span>2278</span></div>
+        </div>
+
+        <div class="frag frag-godkjent2">
+          <div class="app-fh">Status</div>
+          <div class="app-row" style="border-top:none">
+            <div class="app-row-info"><span>14.08 · Fotball</span><span class="app-row-sub">Uke 33 · 6,5t</span></div>
+            <span class="app-badge app-badge-godkjent">Godkjent</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
