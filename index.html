@@ -237,9 +237,18 @@
   .explain-divider{width:1px;background:var(--line);align-self:stretch}
   /* SLIK FUNGERER DET */
   .howitworks{position:relative;z-index:1;padding:1rem 1.5rem 3rem}
-  .hiw-inner{max-width:900px;margin:0 auto}
-  .hiw-step{display:flex;flex-direction:column;gap:1.1rem;margin-bottom:3rem}
-  .hiw-step:last-child{margin-bottom:0}
+  .hiw-inner{max-width:1180px;margin:0 auto}
+  .hiw-steps{
+    display:flex;gap:1.4rem;overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;padding-bottom:1.1rem;margin:0 -1.5rem;padding-left:1.5rem;padding-right:1.5rem;
+  }
+  .hiw-steps::-webkit-scrollbar{height:5px}
+  .hiw-steps::-webkit-scrollbar-thumb{background:var(--line);border-radius:10px}
+  .hiw-steps::-webkit-scrollbar-track{background:transparent}
+  .hiw-step{
+    display:flex;flex-direction:column;gap:1.1rem;
+    scroll-snap-align:start;flex:0 0 calc(33.333% - 0.95rem);min-width:280px;
+  }
   .hiw-num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:var(--wine);letter-spacing:.05em}
   .hiw-text h3{font-family:'Space Grotesk',sans-serif;font-size:19px;margin:0.3rem 0 0.4rem}
   .hiw-text p{font-size:14.5px;color:var(--ink-soft);margin:0;max-width:52ch}
@@ -324,6 +333,7 @@
     .club-card{padding:1rem 0.5rem}
     .club-card img{width:64px;height:64px}
     .wv-grid{grid-template-columns:1fr 1fr;gap:0.9rem}
+    .hiw-step{flex:0 0 86%;min-width:0}
   }
 </style>
 </head>
@@ -340,7 +350,7 @@
   </div>
   <h1>Timelister og lønnsgrunnlag for idrettslag</h1>
   <p class="tagline">Mer tid til klubben, mindre til Excel-ark.</p>
-  <p class="hero-desc">Registrer timer, godkjenn dem og eksporter ferdig lønnsgrunnlag – alt på ett sted.</p>
+  <p class="hero-desc">Registrer, godkjenn og eksporter ferdig lønnsgrunnlag – alt på ett sted.</p>
   <div class="cta-row">
     <a class="btn-primary" href="#" onclick="openContactForm();return false;">Kom i gang</a>
     <button class="btn-login" onclick="openClubPicker()">
@@ -353,9 +363,9 @@
 <section class="howitworks">
   <div class="hiw-inner">
     <div class="section-head" style="text-align:center;margin:0 auto 2.6rem">
-      <span class="eyebrow">Slik fungerer det</span>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.55rem,2.6vw,2.05rem);letter-spacing:-0.01em;margin-top:0.7rem">Tre steg, rett fra appen</h2>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.55rem,2.6vw,2.05rem);letter-spacing:-0.01em">Tre steg, rett fra Vellano</h2>
     </div>
+    <div class="hiw-steps">
     <div class="hiw-step">
       <div class="hiw-text">
         <span class="hiw-num">01</span>
@@ -438,13 +448,13 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
 </section>
 <section class="whoisitfor">
   <div class="wif-inner">
     <div class="section-head" style="text-align:center;margin:0 auto 2.2rem">
-      <span class="eyebrow">Hvem er det for</span>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.55rem,2.6vw,2.05rem);letter-spacing:-0.01em;margin-top:0.7rem">Bygget rundt hvordan klubben faktisk er organisert</h2>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.55rem,2.6vw,2.05rem);letter-spacing:-0.01em">Bygget rundt hvordan klubben faktisk er organisert</h2>
     </div>
     <div class="wif-grid">
       <div class="wif-col">
