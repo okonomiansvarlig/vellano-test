@@ -40,21 +40,23 @@
   .blob-3{width:340px;height:340px;background:var(--pine);top:40%;right:6%;opacity:0.25;animation:driftA 30s ease-in-out infinite alternate-reverse}
   @keyframes driftA{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.08)}}
   @keyframes driftB{from{transform:translate(0,0) scale(1)}to{transform:translate(-35px,-25px) scale(1.05)}}
-  .frag-cluster{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;margin-top:0.4rem}
+  .frag-cluster{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem 0.7rem;margin-top:0.3rem}
+  .frag-cluster > :nth-child(3){margin-top:-1rem}
+  .frag-cluster > :nth-child(4){margin-top:-1rem}
   .frag{background:#fff;border:1px solid var(--line);border-radius:8px;
     box-shadow:0 16px 34px -18px rgba(22,36,28,0.28);opacity:0.94;
     position:relative;width:100%}
   /* Excel grid mockup */
   .frag-excel{padding:0;transform:rotate(-3deg);overflow:hidden;align-self:start}
-  .frag-excel .xl-head{display:grid;grid-template-columns:12px 1fr 0.8fr 0.6fr 0.8fr;background:#EDF0E6;border-bottom:1px solid var(--line)}
-  .frag-excel .xl-head span{font-size:6.5px;color:var(--ink-faint);text-align:center;padding:3px 0;border-right:1px solid var(--line);overflow:hidden}
-  .frag-excel .xl-row{display:grid;grid-template-columns:12px 1fr 0.8fr 0.6fr 0.8fr}
-  .frag-excel .xl-row span{font-size:7px;padding:2.5px 1px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--ink-soft);text-align:center;white-space:nowrap;overflow:hidden}
-  .frag-excel .xl-row span:first-child{background:#EDF0E6;color:var(--ink-faint);font-size:9px}
+  .frag-excel .xl-head{display:grid;grid-template-columns:11px 0.9fr 1fr 0.85fr 0.55fr 0.65fr;background:#EDF0E6;border-bottom:1px solid var(--line)}
+  .frag-excel .xl-head span{font-size:6.5px;color:var(--ink-faint);text-align:center;padding:3.5px 0;border-right:1px solid var(--line);overflow:hidden}
+  .frag-excel .xl-row{display:grid;grid-template-columns:11px 0.9fr 1fr 0.85fr 0.55fr 0.65fr}
+  .frag-excel .xl-row span{font-size:6.8px;padding:3px 1px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--ink-soft);text-align:center;white-space:nowrap;overflow:hidden}
+  .frag-excel .xl-row span:first-child{background:#EDF0E6;color:var(--ink-faint);font-size:8.5px}
   .frag-excel .xl-err{color:var(--wine);background:#FCEAEA;font-weight:600}
   /* SMS conversation mockup */
   .frag-sms{padding:0.8rem 0.8rem 0.7rem;transform:rotate(3deg);align-self:start}
-  .frag-sms .sms-bubble{max-width:88%;padding:6px 9px;border-radius:12px;font-size:11px;line-height:1.35;margin-bottom:5px}
+  .frag-sms .sms-bubble{max-width:88%;padding:7px 10px;border-radius:12px;font-size:12px;line-height:1.35;margin-bottom:5px}
   .frag-sms .sms-in{background:#EEF0E7;color:var(--ink-soft);border-bottom-left-radius:4px}
   .frag-sms .sms-out{background:var(--pine);color:#fff;margin-left:auto;border-bottom-right-radius:4px}
   /* Gmail-style email mockup */
@@ -64,12 +66,12 @@
   .frag-email .em-subj{font-size:9.5px;color:var(--ink-faint);margin-left:5px}
   .frag-email .em-body{padding:0.6rem 0.75rem}
   .frag-email .em-line{font-size:9.5px;color:var(--ink-faint);margin-bottom:2px}
-  .frag-email .em-text{font-size:10px;color:var(--ink-soft);line-height:1.5;margin-top:4px}
+  .frag-email .em-text{font-size:11px;color:var(--ink-soft);line-height:1.5;margin-top:4px}
   /* Authentic app UI mockups — bruker den ekte appens farger (blå/grønn/rød), ikke Vellano sine */
   .app-fh{font-size:9.5px;font-weight:600;color:#4a4a4a;letter-spacing:.02em;margin-bottom:7px}
   .frag-submitted{padding:0.85rem 0.9rem;transform:rotate(2deg);align-self:start}
   .app-entry{background:#f7f7f5;border-radius:9px;padding:0.6rem 0.7rem}
-  .app-entry-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:600;color:#1a1a1a;margin-bottom:3px;gap:6px}
+  .app-entry-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:600;color:#1a1a1a;margin-bottom:3px;gap:6px}
   .app-entry-sub{font-size:10px;color:#7a7a7a}
   .app-badge{font-size:9px;font-weight:600;border-radius:100px;padding:2px 8px;white-space:nowrap}
   .app-badge-innsendt{background:#fef7e6;color:#7a5200}
@@ -214,12 +216,12 @@
     text-align:center;font-size:12.5px;color:var(--ink-faint);
   }
   footer.credit a{color:inherit;text-decoration:none;border-bottom:1px solid var(--line)}
-  .explain{position:relative;z-index:1;padding:2.5rem 1.5rem 3rem}
+  .explain{position:relative;z-index:1;padding:1.6rem 1.5rem 2.2rem}
   .explain-inner{
     max-width:880px;margin:0 auto;
     display:grid;grid-template-columns:1fr auto 1fr;gap:2.4rem;align-items:start;
   }
-  .explain-col{border-radius:22px;padding:1.8rem 1.7rem 2.2rem;overflow:visible}
+  .explain-col{border-radius:22px;padding:1.3rem 1.3rem 1.5rem;overflow:visible}
   .explain-col.without{background:rgba(140,47,57,0.055)}
   .explain-col.with{background:rgba(47,92,70,0.07)}
   .explain-label{
@@ -228,7 +230,7 @@
   }
   .explain-col.without .explain-label{color:var(--wine)}
   .explain-col.with .explain-label{color:var(--pine)}
-  .explain-col p{font-size:14.5px;line-height:1.65;color:var(--ink-soft);margin:0 0 1.5rem}
+  .explain-col p{font-size:14px;line-height:1.6;color:var(--ink-soft);margin:0 0 1rem}
   .explain-divider{width:1px;background:var(--line);align-self:stretch}
   /* SLIK FUNGERER DET */
   .howitworks{position:relative;z-index:1;padding:1rem 1.5rem 3rem}
@@ -241,10 +243,10 @@
   .hiw-steps::-webkit-scrollbar-thumb{background:var(--line);border-radius:10px}
   .hiw-steps::-webkit-scrollbar-track{background:transparent}
   .hiw-step{
-    display:flex;flex-direction:column;gap:1.1rem;
-    scroll-snap-align:start;flex:0 0 calc(33.333% - 0.95rem);min-width:280px;
+    display:flex;flex-direction:column;gap:0.9rem;
+    scroll-snap-align:start;flex:0 0 300px;max-width:300px;min-width:240px;
   }
-  .hiw-num{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px;color:var(--wine);letter-spacing:.05em}
+  .hiw-num{display:block;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:34px;letter-spacing:-0.02em;color:var(--wine);opacity:0.35;line-height:1;margin-bottom:0.2rem}
   .hiw-text h3{font-family:'Space Grotesk',sans-serif;font-size:19px;margin:0.3rem 0 0.4rem}
   .hiw-text p{font-size:14.5px;color:var(--ink-soft);margin:0;max-width:52ch}
   .hiw-shot{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 44px -22px rgba(22,36,28,0.3);background:#fff;position:relative}
@@ -287,10 +289,10 @@
   .whyvellano{position:relative;z-index:1;padding:1rem 1.5rem 3rem}
   .wv-inner{max-width:900px;margin:0 auto}
   .wv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
-  .wv-card{background:rgba(47,92,70,0.07);border-radius:20px;padding:1.7rem 1.5rem 1.9rem}
-  .wv-card-num{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--pine);margin-bottom:0.9rem}
-  .wv-card h3{font-family:'Space Grotesk',sans-serif;font-size:16.5px;letter-spacing:-0.01em;margin:0 0 0.5rem;color:var(--pine-dark)}
-  .wv-card p{font-size:14px;color:var(--ink-soft);margin:0;line-height:1.5}
+  .wv-card{background:rgba(47,92,70,0.07);border:1px solid rgba(47,92,70,0.12);border-radius:20px;padding:1.9rem 1.6rem 2rem;box-shadow:0 12px 28px -18px rgba(22,36,28,0.25)}
+  .wv-card-num{display:block;font-family:'Space Grotesk',sans-serif;font-size:36px;font-weight:700;letter-spacing:-0.02em;color:var(--pine);opacity:0.32;margin-bottom:0.3rem;line-height:1}
+  .wv-card h3{font-family:'Space Grotesk',sans-serif;font-size:17.5px;letter-spacing:-0.01em;margin:0 0 0.5rem;color:var(--pine-dark)}
+  .wv-card p{font-size:14px;color:var(--ink-soft);margin:0;line-height:1.55}
   /* CTA-BANNER */
   .cta-banner-section{position:relative;z-index:1;padding:1rem 1.5rem 4rem}
   .ctab-inner{
@@ -313,7 +315,7 @@
     .club-card{padding:1rem 0.5rem}
     .club-card img{width:64px;height:64px}
     .wv-grid{grid-template-columns:1fr 1fr;gap:0.9rem}
-    .hiw-step{flex:0 0 86%;min-width:0}
+    .hiw-step{flex:0 0 78%;max-width:280px;min-width:0}
   }
 </style>
 </head>
@@ -439,11 +441,11 @@
       <p>SMS-er i siste liten, huskelapper, og et Excel-ark som ikke skjønner at Kari jobber i tre avdelinger samtidig.</p>
       <div class="frag-cluster">
         <div class="frag frag-excel">
-          <div class="xl-head"><span></span><span>Ansatt</span><span>Dato</span><span>Timer</span><span>Lønn</span></div>
-          <div class="xl-row"><span>1</span><span>Ola N.</span><span>12.08</span><span>8</span><span class="xl-err">#REF!</span></div>
-          <div class="xl-row"><span>2</span><span>Kari H.</span><span>13.08</span><span class="xl-err">#VALUE!</span><span>—</span></div>
-          <div class="xl-row"><span>3</span><span>Per T.</span><span>14.08</span><span>4</span><span>860</span></div>
-          <div class="xl-row"><span>4</span><span>Siri M.</span><span>16.08</span><span>5</span><span>1075</span></div>
+          <div class="xl-head"><span></span><span>Navn</span><span>Stilling</span><span>Avdeling</span><span>Timer</span><span>Lønn</span></div>
+          <div class="xl-row"><span>1</span><span>Anders E.</span><span>Trener</span><span>Inkludering</span><span>2,0</span><span>400 kr</span></div>
+          <div class="xl-row"><span>2</span><span>Kari H.</span><span>Trener allidr.</span><span>Allidrett</span><span class="xl-err">#VALUE!</span><span>—</span></div>
+          <div class="xl-row"><span>3</span><span>Ola N.</span><span>Trener fotball</span><span>Fotball</span><span>12,5</span><span class="xl-err">#REF!</span></div>
+          <div class="xl-row"><span>4</span><span>Eirik B.</span><span>Trener fotball</span><span>Fotball jr.</span><span>13,5</span><span>2 025 kr</span></div>
         </div>
         <div class="frag frag-sms">
           <div class="sms-bubble sms-in">Har du husket å sende inn timelista? 📋</div>
@@ -477,16 +479,19 @@
         <div class="frag frag-submitted">
           <div class="app-fh">Mine timer</div>
           <div class="app-entry">
-            <div class="app-entry-top"><span>Vaktvikar</span><span class="app-badge app-badge-innsendt">Innsendt</span></div>
-            <div class="app-entry-sub">Klubbhuset · 4,0t</div>
+            <div class="app-entry-top"><span>Hall · Hallvakt</span><span class="step-mock-badge step-mock-badge-venter" style="font-size:8.5px;padding:2px 8px">Venter</span></div>
+            <div class="app-entry-sub">Tirsdag · 4,0t</div>
           </div>
         </div>
         <div class="frag frag-approve">
           <div class="app-fh">Godkjenning</div>
-          <div class="app-ansatt">Ola Nilsen</div>
+          <div class="app-ansatt">Ola Nilsen · Fotball</div>
           <div class="app-row">
-            <div class="app-row-info"><span>12.08 · Vaktvikar</span><span class="app-row-sub">Klubbhuset · 4,0t</span></div>
-            <span class="app-btns"><span class="app-btn app-yes">✓</span><span class="app-btn app-no">✗</span></span>
+            <div class="app-row-info"><span>12.08 · Trener</span><span class="app-row-sub">Fotball · 4,0t</span></div>
+            <span class="app-btns">
+              <span class="step-mock-icon" style="width:17px;height:17px;font-size:9px;background:#e6f4ec;color:#1a6b3c">✓</span>
+              <span class="step-mock-icon" style="width:17px;height:17px;font-size:9px;background:#fceaea;color:#b5191a">✕</span>
+            </span>
           </div>
         </div>
         <div class="frag frag-export">
@@ -494,13 +499,13 @@
           <div class="exp-head"><span>Nr</span><span>Antall</span><span>Sats</span><span>Lønn</span></div>
           <div class="exp-row"><span>14</span><span>4,0</span><span>220</span><span>880</span></div>
           <div class="exp-row"><span>22</span><span>6,5</span><span>215</span><span>1398</span></div>
-          <div class="exp-total"><span>Totalt</span><span>10,5t</span><span></span><span>2278</span></div>
+          <div class="step-mock-success" style="font-size:10.5px;padding:6px 9px;margin-top:6px">✓ Klar for lønnssystemet</div>
         </div>
         <div class="frag frag-godkjent2">
           <div class="app-fh">Status</div>
           <div class="app-row" style="border-top:none">
             <div class="app-row-info"><span>14.08 · Fotball</span><span class="app-row-sub">Uke 33 · 6,5t</span></div>
-            <span class="app-badge app-badge-godkjent">Godkjent</span>
+            <span class="step-mock-badge step-mock-badge-godkjent" style="font-size:8.5px;padding:2px 8px">Godkjent</span>
           </div>
         </div>
       </div>
@@ -510,8 +515,7 @@
 <section class="whyvellano">
   <div class="wv-inner">
     <div class="section-head" style="text-align:center;margin:0 auto 2.2rem">
-      <span class="eyebrow">Hvorfor Vellano</span>
-      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.55rem,2.6vw,2.05rem);letter-spacing:-0.01em;margin-top:0.7rem">Fire grunner til å velge Vellano</h2>
+      <h2 style="font-family:'Space Grotesk',sans-serif;font-size:clamp(1.55rem,2.6vw,2.05rem);letter-spacing:-0.01em">Fire grunner til å velge Vellano</h2>
     </div>
     <div class="wv-grid">
       <div class="wv-card">
