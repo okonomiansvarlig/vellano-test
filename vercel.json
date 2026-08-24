@@ -1,6 +1,8 @@
 {
   "rewrites": [
     { "source": "/sagene", "destination": "https://timeregistrering-5wyz.vercel.app" },
-    { "source": "/sagene/:path*", "destination": "https://timeregistrering-5wyz.vercel.app/:path*" }
+    { "source": "/sagene/:path*", "destination": "https://timeregistrering-5wyz.vercel.app/:path*" },
+    { "source": "/lommedalen", "destination": "https://lommedalen.vercel.app" },
+    { "source": "/lommedalen/:path*", "destination": "https://lommedalen.vercel.app/:path*" }
   ]
 }
